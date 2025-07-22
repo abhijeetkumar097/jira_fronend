@@ -50,7 +50,7 @@ const UserOverview = () => {
 
   return (
     <>
-    <div className={`p-5 max-w-4xl mx-auto text-white bg-gray-900 mb-4 ${isEmployee ? "bg-gray-200 text-blue-950" : 'opacity-0'}`}>
+    <div className={`p-5 max-w-4xl mx-auto bg-blue-200 mb-4 ${isEmployee ? "" : 'opacity-0'}`}>
       <div>To access features to Manager</div>
       <div dir='rtl'>
 
@@ -66,21 +66,21 @@ const UserOverview = () => {
       </div>
     </div>
     
-    <div className="p-6 max-w-4xl mx-auto text-white bg-gray-900 mb-4">
+    <div className="p-6 max-w-4xl mx-auto shadow-2xl bg-base-300 mb-4">
       <h2 className="text-2xl font-bold mb-4 text-center">My Projects</h2>
       <ul className="mb-3 space-y-2">
         {data.projects.map(p => (
-          <li key={p.id} className="bg-gray-800 p-3 rounded ">{p.project_name}</li>
+          <li key={p.id} className="shadow-inner bg-base-100 p-3 rounded ">{p.project_name}</li>
         ))}
       </ul>
       </div>
 
-      <div className="p-4 max-w-4xl mx-auto text-white bg-gray-900">
+      <div className="p-4 max-w-4xl mx-auto shadow-2xl bg-base-300">
       <h2 className="text-2xl font-bold mb-4 text-center">My Teams</h2>
       {data.teams.map(team => (
-        <div key={team.team_id} className="mb-6 p-4 bg-gray-800 rounded">
+        <div key={team.team_id} className="mb-6 p-4 shadow-inner rounded">
           <h3 className="text-xl font-semibold">{team.team_name}</h3>
-          <p className="text-sm text-gray-300">{team.description}</p>
+          <p className="text-sm">{team.description}</p>
           <ul className="mt-2 pl-4 list-disc">
             {team.members.map(member => (
               <li key={member.id}>{member.username} ({member.email})</li>

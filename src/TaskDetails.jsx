@@ -23,7 +23,7 @@ const TaskDetails = () => {
   if (!task) return <div className="text-center mt-4">Loading task...</div>;
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gray-900 rounded shadow text-white">
+    <div className="max-w-4xl mx-auto p-6 bg-base-300 rounded shadow-2xl">
       <h1 className="text-2xl font-bold mb-2">{task.title}</h1>
       <p className="mb-2"><span className="font-semibold">Description:</span> {task.description}</p>
       <p className="mb-2"><span className="font-semibold">Status:</span> {task.status}</p>

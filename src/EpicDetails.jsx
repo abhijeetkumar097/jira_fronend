@@ -74,13 +74,13 @@ const EpicDetails = () => {
   }
 
   return (
-    <div className="p-6 max-w-6xl mx-auto bg-gray-900 text-white min-h-screen">
+    <div className="p-6 max-w-6xl mx-auto min-h-screen border shadow-2xl">
       {/* Epic Header */}
       <div className="mb-6">
         <div className="flex justify-between items-start mb-4">
           <div>
             <h1 className="text-3xl font-bold text-blue-400 mb-2">{epic.title}</h1>
-            <p className="text-gray-300 mb-4">{epic.description}</p>
+            <p className="text-gray-400 mb-4">{epic.description}</p>
           </div>
           <button
             onClick={() => navigate("/epics")}
@@ -116,7 +116,7 @@ const EpicDetails = () => {
       </div>
 
       {/* Stories Section */}
-      <div className="bg-gray-800 rounded-lg p-6">
+      <div className="bg-base-300 border  rounded-lg p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">Stories ({stories.length})</h2>
           <button onClick={handleCreateStory} className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
@@ -129,7 +129,7 @@ const EpicDetails = () => {
             {stories.map((story) => (
               <div
                 key={story.id}
-                className="bg-gray-700 p-4 rounded cursor-pointer hover:bg-gray-600 transition-colors"
+                className="bg-base-100 p-4 rounded cursor-pointer hover:bg-base-300 transition-colors"
                 onClick={() => handleStoryClick(story.id)}
               >
                 <div className="flex justify-between items-start">
@@ -141,7 +141,7 @@ const EpicDetails = () => {
                       <span
                         className={`px-2 py-1 rounded ${
                           story.status === "todo"
-                            ? "bg-gray-600"
+                            ? "bg-gray-400"
                             : story.status === "in_progress"
                               ? "bg-blue-600"
                               : story.status === "in_review"

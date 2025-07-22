@@ -47,17 +47,17 @@ const ProTaskList = () => {
 
 
   return (
-    <div className="p-4 max-w-4xl mx-auto bg-gray-900 text-white">
+    <div className="p-4 max-w-4xl mx-auto bg-base-300 shadow-2xl rounded-lg">
       <h2 className="text-xl font-bold mb-4">Tasks</h2>
       <ul className="space-y-2">
         {tasks.length ? (
           tasks.map(task => (
-            <li key={task.id} className="bg-gray-800 p-4 rounded shadow border border-gray-600 overflow-hidden">
+            <li key={task.id} className="bg-base-200 p-4 rounded shadow border border-gray-600 overflow-hidden">
               <div>Project: {task.project_name}</div>
               <div className="flex justify-between items-center">
                 <div>
                   <span className="font-semibold">{task.title}</span>
-                  <span className="text-sm text-gray-300 ml-2">({task.status})</span>
+                  <span className="text-sm text-gray-400 ml-2">({task.status})</span>
                 </div>
                 <button
                   onClick={() => toggleAccordion(task.id)}

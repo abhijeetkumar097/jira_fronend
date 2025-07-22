@@ -56,7 +56,7 @@ const ProjectForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-6 border border-gray-600 shadow rounded max-w-2xl mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-4 p-6 border shadow-2xl rounded max-w-2xl mx-auto">
       <div className='text-xl mb-3'>Create Project</div>
       <input name="project_name" value={form.project_name} onChange={handleChange} placeholder="Project Name" required className="w-full border p-2 rounded" />
       {/* <input name="project_key" value={form.project_key} onChange={handleChange} placeholder="Project Key" required className="w-full border p-2 rounded" /> */}

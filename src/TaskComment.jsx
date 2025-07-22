@@ -41,7 +41,7 @@ const TaskComment = ({ taskId, projectId }) => {
         {comments.map((com) => (
           <div
             key={com.id}
-            className="bg-gray-800 text-white p-3 m-2 rounded shadow border border-gray-700"
+            className="bg-base-200 p-3 m-2 rounded shadow-lg"
           >
             <p className="text-sm text-gray-400">{com.posted_at.split('.')[0]}</p>
             <p className="font-medium text-blue-400">{com.posted_by.name} ({com.posted_by.email})</p>
@@ -52,7 +52,7 @@ const TaskComment = ({ taskId, projectId }) => {
 
   <div className="mt-6">
     <textarea
-      className="w-full bg-gray-900 text-white border border-gray-700 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="w-full border border-gray-700 rounded p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
       rows="3"
       placeholder="Write a comment..."
       value={comment}

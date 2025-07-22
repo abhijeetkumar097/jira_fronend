@@ -28,7 +28,7 @@ const EpicList = () => {
   }
 
   return (
-    <div className="p-4 max-w-4xl mx-auto bg-gray-900 text-white">
+    <div className="p-4 max-w-4xl mx-auto bg-base-300">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Epics</h2>
         <button
@@ -44,13 +44,13 @@ const EpicList = () => {
           epics.map((epic) => (
             <div
               key={epic.id}
-              className="bg-gray-800 p-4 rounded shadow border border-gray-600 cursor-pointer hover:bg-gray-700"
+              className="bg-base-200 p-4 rounded shadow border border-gray-600 cursor-pointer hover:bg-base-300"
               onClick={() => handleEpicClick(epic.id)}
             >
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-blue-400">{epic.title}</h3>
-                  <p className="text-gray-300 mt-1">{epic.description}</p>
+                  <p className="text-gray-400 mt-1">{epic.description}</p>
                   <div className="flex gap-4 mt-2 text-sm">
                     <span
                       className={`px-2 py-1 rounded ${
@@ -74,7 +74,7 @@ const EpicList = () => {
                     >
                       {epic.priority.toUpperCase()}
                     </span>
-                    <span className="text-gray-400">{epic.stories_count} stories</span>
+                    <span className="text-black bg-green-400 px-2 py-1 rounded">{epic.stories_count} stories</span>
                   </div>
                 </div>
               </div>

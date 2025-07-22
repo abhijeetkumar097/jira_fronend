@@ -42,7 +42,7 @@ export default function Sidebar({ open, setOpen, setAuth }) {
     <div className="flex">
       {/* Toggle Button (Always visible) */}
       <button
-        className="fixed top-4 left-4 z-50 bg-base-200 text-white rounded-full p-2 shadow"
+        className="fixed top-4 left-4 z-50 bg-base-200 rounded-full p-2 shadow"
         onClick={() => setOpen(!open)}
       >
         {open ? <X size={24} /> : <Menu size={24} />}
@@ -50,7 +50,7 @@ export default function Sidebar({ open, setOpen, setAuth }) {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-base-200 text-base-content transform transition-transform duration-300 z-40 bg-black ${
+        className={`fixed top-0 left-0 h-full w-64 bg-base-200 text-base-content transform transition-transform duration-300 z-40 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >

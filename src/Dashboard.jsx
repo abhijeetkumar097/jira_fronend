@@ -30,7 +30,7 @@ const Dashboard = () => {
     <div className="p-1  m-20 mt-4">
       <h1 className="text-3xl font-semibold mb-4">Dashboard</h1>
 
-      <div className="bg-slate-600 shadow rounded mb-6 p-5">
+      <div className="shadow-xl rounded mb-6 p-5">
         <h2 className="text-xl font-bold mb-6">My Projects</h2>
         {data.projects.length ? (
           <ul className='flex flex-wrap gap-10'>
@@ -52,7 +52,7 @@ const Dashboard = () => {
         ) : <p>No projects yet.</p>}
       </div>
 
-      <div className="bg-gray-900 shadow rounded mb-6 p-5">
+      <div className="shadow-2xl rounded mb-6 p-5">
         <h2 className="text-xl font-bold mb-6">My Tasks</h2>
         {data.tasks.length ? (
           <ul className='flex flex-wrap gap-10'>
@@ -75,12 +75,12 @@ const Dashboard = () => {
         ) : <p>No tasks assigned to you.</p>}
       </div>
 
-      <div className="bg-black shadow p-4 rounded">
+      <div className="shadow-2xl p-4 rounded">
         <h2 className="text-xl font-bold mb-6">Activity Logs</h2>
         {data.activities.length ? (
           <ul className="space-y-1">
             {data.activities.map(t => (
-              <li key={t.id} className="border border-gray-600 p-2 rounded shadow-sm bg-gray-800">
+              <li key={t.id} className="border border-gray-600 p-2 rounded shadow-sm bg-base-300">
                   <div><strong>Action:</strong> {t.action}</div>
                   <div><strong>Description:</strong> {t.description}</div>
                   <div className="text-sm text-gray-500"><strong>At:</strong> {t.timestamp}</div>

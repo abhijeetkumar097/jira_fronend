@@ -80,7 +80,7 @@ const StoryDetails = () => {
   }
 
   return (
-    <div className="p-6 max-w-6xl mx-auto bg-gray-900 text-white min-h-screen">
+    <div className="p-6 max-w-6xl mx-auto bg-base-200 min-h-screen">
       {/* Story Header */}
       <div className="mb-6">
         <div className="flex justify-between items-start mb-4">
@@ -111,7 +111,7 @@ const StoryDetails = () => {
           <span
             className={`px-3 py-1 rounded text-sm font-medium ${
               story.status === "todo"
-                ? "bg-gray-600"
+                ? "bg-gray-400"
                 : story.status === "in_progress"
                   ? "bg-blue-600"
                   : story.status === "in_review"
@@ -135,7 +135,7 @@ const StoryDetails = () => {
       </div>
 
       {/* Tasks Section */}
-      <div className="bg-gray-800 rounded-lg p-6">
+      <div className="bg-base-300 border-2 rounded-lg p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold">Tasks ({tasks.length})</h2>
           <button onClick={handleCreateTask} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
@@ -148,19 +148,19 @@ const StoryDetails = () => {
             {tasks.map((task) => (
               <div
                 key={task.id}
-                className="bg-gray-700 p-4 rounded cursor-pointer hover:bg-gray-600 transition-colors"
+                className="bg-base-100 p-4 rounded cursor-pointer hover:bg-base-300 transition-colors"
                 onClick={() => handleTaskClick(task.id)}
               >
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2">{task.title}</h3>
-                    <p className="text-gray-300 mb-3">{task.description}</p>
+                    <h3 className="text-lg font-semibold mb-2">{task.title}</h3>
+                    <p className="text-gray-500 mb-3">{task.description}</p>
 
                     <div className="flex gap-3 text-sm">
                       <span
                         className={`px-2 py-1 rounded ${
                           task.status === "todo"
-                            ? "bg-gray-600"
+                            ? "bg-gray-400"
                             : task.status === "in_progress"
                               ? "bg-blue-600"
                               : task.status === "in_review"
@@ -176,12 +176,12 @@ const StoryDetails = () => {
                             ? "bg-red-600"
                             : task.priority === "medium"
                               ? "bg-orange-600"
-                              : "bg-gray-600"
+                              : "bg-pink-400"
                         }`}
                       >
                         {task.priority.toUpperCase()}
                       </span>
-                      <span className="px-2 py-1 rounded bg-indigo-600">
+                      <span className="px-2 py-1 rounded bg-indigo-400">
                         {task.work_type.replace("_", " ").toUpperCase()}
                       </span>
                       {task.due_date && <span className="text-gray-400">Due: {task.due_date}</span>}

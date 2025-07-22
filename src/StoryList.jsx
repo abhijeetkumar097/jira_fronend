@@ -28,7 +28,7 @@ const StoryList = () => {
   }
 
   return (
-    <div className="p-4 max-w-4xl mx-auto bg-gray-900 text-white">
+    <div className="p-4 max-w-4xl mx-auto bg-base shadow-2xl">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Stories</h2>
         <button
@@ -44,19 +44,19 @@ const StoryList = () => {
           stories.map((story) => (
             <div
               key={story.id}
-              className="bg-gray-800 p-4 rounded shadow border border-gray-600 cursor-pointer hover:bg-gray-700"
+              className=" p-4 rounded shadow border border-gray-600 cursor-pointer hover:bg-base-300"
               onClick={() => handleStoryClick(story.id)}
             >
               <div className="flex justify-between items-start">
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-green-400">{story.title}</h3>
-                  <p className="text-gray-300 mt-1">{story.description}</p>
+                  <p className="text-gray-400 mt-1">{story.description}</p>
                   <p className="text-blue-400 text-sm mt-1">Epic: {story.epic_title}</p>
                   <div className="flex gap-4 mt-2 text-sm">
                     <span
                       className={`px-2 py-1 rounded ${
                         story.status === "todo"
-                          ? "bg-gray-600"
+                          ? "bg-gray-400"
                           : story.status === "in_progress"
                             ? "bg-blue-600"
                             : story.status === "in_review"
@@ -77,8 +77,8 @@ const StoryList = () => {
                     >
                       {story.priority.toUpperCase()}
                     </span>
-                    {story.story_points && <span className="text-gray-400">{story.story_points} points</span>}
-                    <span className="text-gray-400">{story.tasks_count} tasks</span>
+                    {story.story_points && <span className="bg-green-400 px-2 py-1 rounded">{story.story_points} points</span>}
+                    <span className="bg-pink-500 px-2 py-1 rounded">{story.tasks_count} tasks</span>
                   </div>
                 </div>
               </div>

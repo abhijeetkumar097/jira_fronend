@@ -39,7 +39,7 @@ const TeamForm = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 border border-gray-500 rounded shadow-md mt-10">
+    <div className="max-w-xl mx-auto p-6 border  rounded shadow-2xl mt-10">
       <h2 className="text-2xl mb-6">Create Team</h2>
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
