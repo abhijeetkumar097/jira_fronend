@@ -11,7 +11,7 @@ const TaskDetails = () => {
   const token = sessionStorage.getItem('token');
 
   useEffect(() => {
-    axios.get(`{import.meta.env.VITE_URL}/api/tasks/${taskId}`, {
+    axios.get(`${import.meta.env.VITE_URL}/api/tasks/${taskId}`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setTask(res.data))
       .catch(err => {

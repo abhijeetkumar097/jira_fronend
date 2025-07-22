@@ -13,7 +13,7 @@ const StoryList = () => {
   useEffect(() => {
     if (p_id) {
       axios
-        .get(`{import.meta.env.VITE_URL}/api/stories/project/${p_id}`, {
+        .get(`${import.meta.env.VITE_URL}/api/stories/project/${p_id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setStories(res.data))

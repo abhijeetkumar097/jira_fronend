@@ -15,7 +15,7 @@ const TaskLogTime = ({ taskId }) => {
 
   const submitLog = async () => {
     try {
-      await axios.post(`{import.meta.env.VITE_URL}/api/tasks/${taskId}/time`, form, {
+      await axios.post(`${import.meta.env.VITE_URL}/api/tasks/${taskId}/time`, form, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Time logged!");

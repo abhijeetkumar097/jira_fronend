@@ -29,7 +29,7 @@ const SuperAdminDashboard = () => {
 
   const fetchAllProjects = async () => {
     try {
-      const response = await axios.get("{import.meta.env.VITE_URL}/api/projects/super-admin/all-projects", {
+      const response = await axios.get(`${import.meta.env.VITE_URL}/api/projects/super-admin/all-projects`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(response.data);
@@ -43,7 +43,7 @@ const SuperAdminDashboard = () => {
 
   const fetchAllTeams = async () => {
     try {
-      const response = await axios.get("{import.meta.env.VITE_URL}/api/teams/super-admin/all-teams", {
+      const response = await axios.get(`${import.meta.env.VITE_URL}/api/teams/super-admin/all-teams`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTeams(response.data);

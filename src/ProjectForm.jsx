@@ -16,7 +16,7 @@ const ProjectForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('{import.meta.env.VITE_URL}/api/teams/', {
+    axios.get(`${import.meta.env.VITE_URL}/api/teams/`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setTeams(res.data))
     .catch(err => {
@@ -36,7 +36,7 @@ const ProjectForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('{import.meta.env.VITE_URL}/api/projects/new', form, {
+    await axios.post(`${import.meta.env.VITE_URL}/api/projects/new`, form, {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then((res) => {

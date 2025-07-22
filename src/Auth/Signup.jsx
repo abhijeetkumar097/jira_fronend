@@ -24,7 +24,7 @@ function Signup() {
     // Fetch teams for employee selection
     const fetchTeams = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/api/users/teams")
+        const response = await axios.get(`${import.meta.env.VITE_URL}/api/users/teams`)
         setTeams(response.data)
       } catch (error) {
         console.error("Error fetching teams:", error)
@@ -66,7 +66,7 @@ function Signup() {
         ...(form.role === "employee" && { team_id: Number.parseInt(form.team_id) }),
       }
 
-      const response = await axios.post("http://127.0.0.1:5000/api/users/register", payload)
+      const response = await axios.post(`${import.meta.env.VITE_URL}/api/users/register`, payload)
       toast.success(response.data.msg)
       navigate("/login")
     } catch (err) {

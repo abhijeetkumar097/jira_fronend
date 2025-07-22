@@ -15,7 +15,7 @@ function KanbanBoard() {
   const pid = sessionStorage.getItem('p_id');
   const handleProjectStatusChange = async (ProjectId, newStatus) => {
     try {
-      await axios.put(`{import.meta.env.VITE_URL}/api/projects/${ProjectId}/edit_status`, {
+      await axios.put(`${import.meta.env.VITE_URL}/api/projects/${ProjectId}/edit_status`, {
         status: newStatus
       }, {
         headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` }
@@ -33,7 +33,7 @@ function KanbanBoard() {
   useEffect(() => {
     const fetchBoardData = async () => {
       try {
-        const res = await axios.get(`{import.meta.env.VITE_URL}/api/projects/${pid}/board`, {
+        const res = await axios.get(`${import.meta.env.VITE_URL}/api/projects/${pid}/board`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`
           }

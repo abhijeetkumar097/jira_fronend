@@ -10,7 +10,7 @@ const TeamForm = () => {
   const token = sessionStorage.getItem('token');
 
   useEffect(() => {
-    axios.get('{import.meta.env.VITE_URL}/api/users/', {
+    axios.get(`${import.meta.env.VITE_URL}/api/users/`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setUsers(res.data));
   }, []);
@@ -18,7 +18,7 @@ const TeamForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post('{import.meta.env.VITE_URL}/api/teams/', {
+    await axios.post(`${import.meta.env.VITE_URL}/api/teams/`, {
       team_name: teamName,
       description,
       member_ids: selectedUsers

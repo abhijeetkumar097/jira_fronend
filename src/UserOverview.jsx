@@ -9,7 +9,7 @@ const UserOverview = () => {
   useEffect(() => {
     const userInfo = JSON.parse(sessionStorage.getItem("userInfo") || "{}");
     setUserRoles(userInfo.roles || []);
-    axios.get('{import.meta.env.VITE_URL}/api/users/me/overview', {
+    axios.get(`${import.meta.env.VITE_URL}/api/users/me/overview`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setData(res.data))
       .catch(err => console.error('Overview fetch error:', err.response?.data || err.message));
@@ -37,7 +37,7 @@ const UserOverview = () => {
   const token = sessionStorage.getItem("token");
 
   try {
-    await axios.post("{import.meta.env.VITE_URL}/api/users/request-role-raise", {}, {
+    await axios.post(`${import.meta.env.VITE_URL}/api/users/request-role-raise`, {}, {
       headers: { Authorization: `Bearer ${token}` },
     });
     toast.success("Role raise request sent to admin");

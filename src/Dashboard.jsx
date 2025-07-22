@@ -8,7 +8,7 @@ const Dashboard = () => {
   const token1 = sessionStorage.getItem('token')
   useEffect(() => {
     
-    axios.get('{import.meta.env.VITE_URL}/api/dashboard', {
+    axios.get(`${import.meta.env.VITE_URL}/api/dashboard`, {
       headers: { Authorization: `Bearer ${token1}` }
     }).then(res => setData(res.data))
     .catch(err => {

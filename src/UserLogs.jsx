@@ -7,7 +7,7 @@ function UserLogs() {
   useEffect(() => {
     const fetchLogs = async () => {
       try {
-        const res = await axios.get('{import.meta.env.VITE_URL}/api/activities/user', {
+        const res = await axios.get(`${import.meta.env.VITE_URL}/api/activities/user`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem('token')}`,
           },

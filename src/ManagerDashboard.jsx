@@ -15,7 +15,7 @@ const ManagerDashboard = () => {
 
   const fetchPendingEmployees = async () => {
     try {
-      const response = await axios.get("{import.meta.env.VITE_URL}/api/users/manager/pending", {
+      const response = await axios.get(`${import.meta.env.VITE_URL}/api/users/manager/pending`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       setPendingEmployees(response.data)
@@ -32,7 +32,7 @@ const ManagerDashboard = () => {
   const handleApprove = async (employeeId) => {
     try {
       await axios.post(
-        `{import.meta.env.VITE_URL}/api/users/manager/approve/${employeeId}`,
+        `${import.meta.env.VITE_URL}/api/users/manager/approve/${employeeId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

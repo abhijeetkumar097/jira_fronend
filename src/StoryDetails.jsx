@@ -18,13 +18,13 @@ const StoryDetails = () => {
     const fetchStoryDetails = async () => {
       try {
         // Fetch story details
-        const storyRes = await axios.get(`{import.meta.env.VITE_URL}/api/stories/${storyId}`, {
+        const storyRes = await axios.get(`${import.meta.env.VITE_URL}/api/stories/${storyId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setStory(storyRes.data)
 
         // Fetch tasks for this story
-        const tasksRes = await axios.get(`{import.meta.env.VITE_URL}/api/tasks/story/${storyId}`, {
+        const tasksRes = await axios.get(`${import.meta.env.VITE_URL}/api/tasks/story/${storyId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setTasks(tasksRes.data)

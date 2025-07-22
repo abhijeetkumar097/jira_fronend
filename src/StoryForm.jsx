@@ -25,7 +25,7 @@ const StoryForm = () => {
   useEffect(() => {
     if (p_id) {
       axios
-        .get(`{import.meta.env.VITE_URL}/api/epics/project/${p_id}`, {
+        .get(`${import.meta.env.VITE_URL}/api/epics/project/${p_id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
@@ -52,7 +52,7 @@ const StoryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("{import.meta.env.VITE_URL}/api/stories/new", form, {
+      await axios.post(`${import.meta.env.VITE_URL}/api/stories/new`, form, {
         headers: { Authorization: `Bearer ${token}` },
       })
       toast.success("Story created successfully!")

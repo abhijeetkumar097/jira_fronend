@@ -30,18 +30,18 @@ const TaskForm = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const projRes = await axios.get("{import.meta.env.VITE_URL}/api/projects/", {
+        const projRes = await axios.get(`${import.meta.env.VITE_URL}/api/projects/`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setProjects(projRes.data)
 
-        const usersRes = await axios.get("{import.meta.env.VITE_URL}/api/users/", {
+        const usersRes = await axios.get(`${import.meta.env.VITE_URL}/api/users/`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setUsers(usersRes.data)
 
         if (p_id) {
-          const storiesRes = await axios.get(`{import.meta.env.VITE_URL}/api/stories/project/${p_id}`, {
+          const storiesRes = await axios.get(`${import.meta.env.VITE_URL}/api/stories/project/${p_id}`, {
             headers: { Authorization: `Bearer ${token}` },
           })
           setStories(storiesRes.data)
@@ -68,7 +68,7 @@ const TaskForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("{import.meta.env.VITE_URL}/api/tasks/new", form, {
+      await axios.post(`${import.meta.env.VITE_URL}/api/tasks/new`, form, {
         headers: { Authorization: `Bearer ${token}` },
       })
       toast.success("Task created successfully!")

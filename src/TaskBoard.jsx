@@ -12,7 +12,7 @@ const TaskBoard = () => {
   const [board, setBoard] = useState({ todo: [], in_progress: [], in_review: [], done: [] });
 
   useEffect(() => {
-    axios.get(`{import.meta.env.VITE_URL}/api/tasks/project/${projectId}/board`, {
+    axios.get(`${import.meta.env.VITE_URL}/api/tasks/project/${projectId}/board`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setBoard(res.data));
   }, [projectId, token]);

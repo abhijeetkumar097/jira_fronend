@@ -10,7 +10,7 @@ const TaskList = () => {
   const [openAccordion, setOpenAccordion] = useState(null);
 
   useEffect(() => {
-    axios.get('{import.meta.env.VITE_URL}/api/tasks/my-tasks', {
+    axios.get(`${import.meta.env.VITE_URL}/api/tasks/my-tasks`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setTasks(res.data))
       .catch(err => {
@@ -24,13 +24,13 @@ const TaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
   try {
-    await axios.put(`{import.meta.env.VITE_URL}/api/tasks/${taskId}/edit`, {
+    await axios.put(`${import.meta.env.VITE_URL}/api/tasks/${taskId}/edit`, {
       status: newStatus
     }, {
       headers: { Authorization: `Bearer ${token}` }
     });
 
-    const updated = await axios.get('{import.meta.env.VITE_URL}/api/tasks/my-tasks', {
+    const updated = await axios.get(`${import.meta.env.VITE_URL}/api/tasks/my-tasks`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setTasks(updated.data);

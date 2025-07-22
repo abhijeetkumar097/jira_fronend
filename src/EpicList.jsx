@@ -13,7 +13,7 @@ const EpicList = () => {
   useEffect(() => {
     if (p_id) {
       axios
-        .get(`{import.meta.env.VITE_URL}/api/epics/project/${p_id}`, {
+        .get(`${import.meta.env.VITE_URL}/api/epics/project/${p_id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setEpics(res.data))

@@ -13,7 +13,7 @@ const ProTaskList = () => {
   const p_id = sessionStorage.getItem('p_id');
 
   useEffect(() => {
-    axios.get(`{import.meta.env.VITE_URL}/api/tasks/project-tasks/${p_id}`, {
+    axios.get(`${import.meta.env.VITE_URL}/api/tasks/project-tasks/${p_id}`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => setTasks(res.data))
       .catch(err => {
@@ -27,13 +27,13 @@ const ProTaskList = () => {
 
   const handleStatusChange = async (taskId, newStatus) => {
   try {
-    await axios.put(`{import.meta.env.VITE_URL}/api/tasks/${taskId}/edit`, {
+    await axios.put(`${import.meta.env.VITE_URL}/api/tasks/${taskId}/edit`, {
       status: newStatus
     }, {
       headers: { Authorization: `Bearer ${token}` }
     });
 
-    const updated = await axios.get(`{import.meta.env.VITE_URL}/api/tasks/project-tasks/${p_id}`, {
+    const updated = await axios.get(`${import.meta.env.VITE_URL}/api/tasks/project-tasks/${p_id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     setTasks(updated.data);

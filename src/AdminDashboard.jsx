@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchPendingUsers = async () => {
     try {
-      const response = await axios.get("{import.meta.env.VITE_URL}/api/users/admin/pending", {
+      const response = await axios.get(`${import.meta.env.VITE_URL}/api/users/admin/pending`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       setPendingUsers(response.data)
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
 
   const fetchRoleRaiseRequests = async () => {
     try {
-      const response = await axios.get("{import.meta.env.VITE_URL}/api/users/admin/role-raise-requests", {
+      const response = await axios.get(`${import.meta.env.VITE_URL}/api/users/admin/role-raise-requests`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setRoleRaiseRequests(response.data);
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
   const handleApprove = async (userId) => {
     try {
       await axios.post(
-        `{import.meta.env.VITE_URL}/api/users/admin/approve/${userId}`,
+        `${import.meta.env.VITE_URL}/api/users/admin/approve/${userId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
   const handleReject = async (userId) => {
     try {
       await axios.post(
-        `{import.meta.env.VITE_URL}/api/users/admin/reject/${userId}`,
+        `${import.meta.env.VITE_URL}/api/users/admin/reject/${userId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -79,7 +79,7 @@ const AdminDashboard = () => {
   const handleApproveRoleRaise = async (userId) => {
     try {
       await axios.post(
-        `{import.meta.env.VITE_URL}/api/users/admin/approve-role-raise/${userId}`,
+        `${import.meta.env.VITE_URL}/api/users/admin/approve-role-raise/${userId}`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },

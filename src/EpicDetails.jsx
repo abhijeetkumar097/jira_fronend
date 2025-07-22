@@ -18,13 +18,13 @@ const EpicDetails = () => {
     const fetchEpicDetails = async () => {
       try {
         // Fetch epic details
-        const epicRes = await axios.get(`{import.meta.env.VITE_URL}/api/epics/${epicId}`, {
+        const epicRes = await axios.get(`${import.meta.env.VITE_URL}/api/epics/${epicId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setEpic(epicRes.data)
 
         // Fetch stories for this epic
-        const storiesRes = await axios.get(`{import.meta.env.VITE_URL}/api/stories/epic/${epicId}`, {
+        const storiesRes = await axios.get(`${import.meta.env.VITE_URL}/api/stories/epic/${epicId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         setStories(storiesRes.data)

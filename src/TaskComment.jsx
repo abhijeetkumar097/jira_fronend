@@ -12,7 +12,7 @@ const TaskComment = ({ taskId, projectId }) => {
     setreload(!reload)
     if (!comment.trim()) return;
     try {
-      await axios.post(`{import.meta.env.VITE_URL}/api/tasks/${taskId}/comment`, {
+      await axios.post(`${import.meta.env.VITE_URL}/api/tasks/${taskId}/comment`, {
         content: comment
       }, {
         headers: { Authorization: `Bearer ${token}` }
@@ -26,7 +26,7 @@ const TaskComment = ({ taskId, projectId }) => {
   };
 
   useEffect(() => {
-    axios.get(`{import.meta.env.VITE_URL}/api/tasks/${taskId}/comments`, {
+    axios.get(`${import.meta.env.VITE_URL}/api/tasks/${taskId}/comments`, {
       headers: { Authorization : `Bearer ${token}`}
     })
     .then(res => setComments(res.data))
